@@ -1,14 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import App from "./App";
+import Books from "./pages/Books";
+import Chakra from "./pages/Chakra";
+import { ChakraProvider } from "@chakra-ui/react";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ChakraProvider>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+
+        <Link to="/books">Books</Link>
+      </nav>
+      <Routes>
+        <Route path="/" index element={<App />}></Route>
+        <Route path="/books" element={<Books />}></Route>
+        <Route path="/chakra" element={<Chakra />}></Route>
+      </Routes>
+    </BrowserRouter>
+  </ChakraProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
