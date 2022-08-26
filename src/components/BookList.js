@@ -28,7 +28,15 @@ export default function BookList({ bookList }) {
               </Heading>
             </Flex>
 
-            <Box size="sm" p={3} mt="2" display="flex" justifyContent="center">
+            <Box
+              size="sm"
+              bgGradient={"radial(green.600 1px, transparent 1px)"}
+              backgroundSize="20px 20px"
+              p={3}
+              mt="2"
+              display="flex"
+              justifyContent="center"
+            >
               <Image
                 rounded="md"
                 boxSize="50%"
@@ -36,6 +44,12 @@ export default function BookList({ bookList }) {
                 objectFit="cover"
                 src={elem.img}
               ></Image>
+              <Box
+                bgGradient={"radial(orange.600 1px, transparent 1px)"}
+                backgroundSize="20px 20px"
+                opacity="0.4"
+                height="100%"
+              />
             </Box>
             <Heading>{elem.bookName}</Heading>
             <Text>{elem.description}</Text>

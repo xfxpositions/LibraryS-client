@@ -7,7 +7,7 @@ export default function Books() {
   const [bookImage, setBookImage] = useState(null);
   const [bookList, setBookList] = useState([]);
   useEffect(() => {
-    axiosUtil.get("/book/list").then((result) => {
+    axiosUtil.get("/api/book/list/").then((result) => {
       console.log(result.data.result);
       setBookList(result.data.result);
     });
